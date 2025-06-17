@@ -36,7 +36,7 @@ function OpeningPage() {
             <Card.Img variant="top" src={profile} alt="Profile" className="img-responsive"/>
             <Card.Body className="card-body">
               <Card.Text>View and manage your personal information and see your previous history </Card.Text>
-              <Button variant="primary" className="button-custom" onClick={() => navigate('/profile')}>GO</Button>
+              <Button variant="primary" className="button-custom" onClick={() => navigate('/list')}>GO</Button>
             </Card.Body>
           </Card>
         </Col>
