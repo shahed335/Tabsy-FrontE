@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import OpeningPage from './components/OpeningPage.jsx';
 import ProductList from './components/ProductList.jsx'; 
 import ProductDetail from './components/ProductDetail.jsx';
+import MedicationList from './components/MedicationList.jsx';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -13,7 +14,8 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<OpeningPage />} />
-        <Route path="/shop" element={<ProductList />} /> 
+        <Route path="/shop" element={<ProductList />} />
+        <Route path = "/list" element = {<MedicationList />} />
         <Route path="/product/:id" element={<ProductDetail />} /> 
       </Routes>
     </Router>

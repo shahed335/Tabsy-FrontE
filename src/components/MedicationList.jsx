@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles/style5.css'; 
 
 const MedicationList = () => {
   const [medications, setMedications] = useState([]);
@@ -11,7 +13,6 @@ const MedicationList = () => {
         const data = await res.json();
         setMedications(data);
 
-    
         const total = data.reduce((sum, medication) => sum + medication.amount, 0);
         setTotalAmount(total);
       } catch (error) {
@@ -45,28 +46,57 @@ const MedicationList = () => {
   };
 
   return (
-    <div className="medication-list">
-      <h3>Medication List</h3>
-      <ul>
-        {medications.map((medication) => (
-          <li key={medication.orderId} className="medication-item">
-            <span role="img" aria-label="medication">
-              💊
-            </span>
-            {medication.productName} - Price: {medication.amount} JD
-            <button
-              className="remove-button"
-              onClick={() => handleRemoveMedication(medication.orderId)}
-            >
-              Remove
-            </button>
-          </li>
-        ))}
-      </ul>
-      <div className="total-amount">
+    <div className="container text-center">
+      <h1 className="text-primary mb-4">Medication List</h1> {/* Header with Bootstrap styling */}
+      <div className="row justify-content-center">
+        {/* Column for left section (medication name and icon) */}
+        <div className="col-12 col-md-4">
+          <ul className="list-group">
+            {medications.map((medication) => (
+              <li key={medication.orderId} className="list-group-item d-flex justify-content-center">
+                <div className="item-left d-flex align-items-center">
+                  <span role="img" aria-label="medication">
+                    💊
+                  </span>
+                  {medication.productName}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+        
+        {/* Column for middle section (price) */}
+        <div className="col-12 col-md-4">
+          <ul className="list-group">
+            {medications.map((medication) => (
+              <li key={medication.orderId} className="list-group-item d-flex justify-content-center">
+                Price: {medication.amount} JD
+              </li>
+            ))}
+          </ul>
+        </div>
+        
+        {/* Column for right section (remove button) */}
+        <div className="col-12 col-md-4">
+          <ul className="list-group">
+            {medications.map((medication) => (
+              <li key={medication.orderId} className="list-group-item d-flex justify-content-center">
+                <button
+                  className="btn btn-danger btn-sm"
+                  onClick={() => handleRemoveMedication(medication.orderId)}
+                >
+                  Remove
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      
+      <div className="total-amount mt-4">
         <h4>Total Price: {totalAmount} JD</h4>
       </div>
-      <button className="checkout-button">Checkout</button>
+      <button className="btn btn-primary mt-3">Checkout</button>
     </div>
   );
 };
