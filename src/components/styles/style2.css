@@ -1,0 +1,39 @@
+
+/* Navbar custom styling */
+.custom-navbar {
+  background-color: #343a40; /* Dark background */
+  border-bottom: 1px solid #dee2e6;
+}
+
+.custom-navbar .navbar-brand {
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+.custom-navbar .navbar-nav .nav-link {
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+}
+
+.custom-navbar .navbar-nav .nav-link:hover {
+  color: #ffc107;
+}
+
+.custom-navbar .navbar-nav .nav-link:active {
+  color: #ffc107;
+}
+
+.custom-navbar .navbar-nav .nav-link:focus {
+  color: #ffc107;
+}
+
+.custom-navbar .navbar-nav .nav-link.active {
+  color: #ffc107;
+}
+
+/* Profile image circle */
+.custom-navbar .navbar-nav .nav-link img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
