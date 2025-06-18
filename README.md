@@ -1,73 +1,69 @@
-# Tabsy-FrontE
-=======
-# Getting Started with Create React App
+# Front-End Document: Pharmacy App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+My website acts as an online pharmacy where the users can shop for medications, check drug interactions, and view their profile. Its major features are the following: Users can browse a wide variety of medications, which include generic and brand names, prices, and short descriptions for what they are used for. Each product involved detailed information like the generic name, brand names, strength, pack size, price, and description of how the medication works. (Drug Interaction Checker) This feature allows users to test possible interactions between two drugs, by entering the names of the drugs to run a check. Users can add medications to the cart, watch the total price, and check out. Users can view and manage their profile, including details of their personal information and previous medications and the option to export data. The website provides a simple and easy way of purchasing medications and safely checking drug interactions, as well as managing health-related information for themselves.
 
-In the project directory, you can run:
+The app allows two types of users:
 
-### `npm start`
+### Regular User:
+- View all products with their details.
+- Add products to the list.
+- Remove products from the list.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Admin:
+- Add new products.
+- Delete products.
+- Update products.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### The Authentication:
+- Login and sign up using Auth0.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## User Requirements
 
-### `npm run build`
+### User Registration and Login
+- Users should be able to register for an account with essential details like name, email, and password.
+- Users should be able to log in securely using email and password or other authentication methods.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Product Browsing
+- Users should be able to view a variety of products available in the pharmacy.
+- All products should display the following details:
+  - Product name
+  - Price
+  - Generic name
+  - Pack size
+  - Description of use and side effects
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Drug Interaction Checker
+- Users should be able to check for drug interactions by entering the names of two medications.
+- The system should return a result indicating whether there are any potential interactions.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Order List
+- Users should be able to view and manage their orders/list.
+- Each order should include product details and price.
 
-### `npm run eject`
+### Admin Features:
+- The admin has the same capabilities as the regular user, with additional features:
+  - Add a product.
+  - Update a product.
+  - Delete a product.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Technologies
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **React**
+- **npm**
+- **Bootstrap**
+- **API Fetch**
+- **Local Storage**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## Getting Started
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-(Initialize project using Create React App)
+**Clone the project**  
+   Navigate to the project directory: cd tabsy
+   npm start

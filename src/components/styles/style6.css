@@ -1,0 +1,16 @@
+.sign-up-container {
+  max-width: 500px;
+}
+
+.sign-up-form {
+  width: 100%;
+}
+
+.login-link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}

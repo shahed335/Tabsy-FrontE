@@ -47,9 +47,9 @@ const MedicationList = () => {
 
   return (
     <div className="container text-center">
-      <h1 className="text-primary mb-4">Medication List</h1> {/* Header with Bootstrap styling */}
+      <h1 className="text-primary mb-4">Medication List</h1> 
       <div className="row justify-content-center">
-        {/* Column for left section (medication name and icon) */}
+        
         <div className="col-12 col-md-4">
           <ul className="list-group">
             {medications.map((medication) => (
@@ -65,7 +65,7 @@ const MedicationList = () => {
           </ul>
         </div>
         
-        {/* Column for middle section (price) */}
+       
         <div className="col-12 col-md-4">
           <ul className="list-group">
             {medications.map((medication) => (
@@ -76,7 +76,7 @@ const MedicationList = () => {
           </ul>
         </div>
         
-        {/* Column for right section (remove button) */}
+        
         <div className="col-12 col-md-4">
           <ul className="list-group">
             {medications.map((medication) => (

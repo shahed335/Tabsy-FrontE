@@ -3,7 +3,7 @@ import { Row, Col, Card, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom'; 
 import './styles/style3.css'; 
 
-const ProductList = () => {
+const ProductList = ({ userRole }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate(); 
@@ -16,6 +16,7 @@ const ProductList = () => {
     try {
       const res = await fetch("http://localhost:3002/api/product"); 
       const data = await res.json();
+      console.log(data);
       setProducts(data);  
       setLoading(false);  
     } catch (error) {
@@ -27,6 +28,39 @@ const ProductList = () => {
   
   const handleProductClick = (productId) => {
     navigate(`/product/${productId}`); 
+  };
+
+  const handleDelete = async (productId) => {
+    try {
+      const res = await fetch(`http://localhost:3002/api/product/${productId}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-role': 'admin', 
+        },
+      });
+      
+      const data = await res.json();
+      if (res.ok) {
+        setProducts(products.filter((product) => product.productId !== productId)); 
+        alert('Product deleted successfully');
+      } else {
+        alert(data.message || 'Failed to delete product');
+      }
+    } catch (error) {
+      console.error('Error deleting product:', error);
+      alert('An error occurred while deleting the product');
+    }
+  };
+
+
+  const handleUpdate = (productId) => {
+    console.log("Updating product with ID:", productId);
+     navigate(`/product/${productId}/edit`);
+     
+  };
+  const handleAddProduct = () => {
+    navigate("/add-product"); 
   };
 
   if (loading) {
@@ -47,12 +81,31 @@ const ProductList = () => {
                 <Card.Text>Price: {product.price} JD</Card.Text>
                 <Button variant="primary" onClick={() => handleProductClick(product.productId)}>
                   View Details
-                </Button> 
+                </Button>
+
+              
+                {userRole === 'admin' && (
+                  <>
+                    <Button variant="warning" onClick={() => handleUpdate(product.productId)} className="ml-2">
+                      Update
+                    </Button>
+                    <Button variant="danger" onClick={() => handleDelete(product.productId)} className="ml-2">
+                      Delete
+                    </Button>
+                  </>
+                   )}
               </Card.Body>
             </Card>
           </Col>
         ))}
       </Row>
+
+      {userRole === 'admin' && (
+        <Button variant="success" onClick={handleAddProduct} className="mt-4">
+          Add Product
+        </Button>
+      )}
+
     </div>
   );
 };
